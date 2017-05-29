@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gmail Text Avatar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+</head>
+<body ng-app="gmailClone" ng-controller="mainController">
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--4-col">
+			<ul class="demo-list-three mdl-list">
+				<li class="mdl-list__item mdl-list__item--three-line" ng-repeat="x in data">
+					<span class="mdl-list__item-primary-content">
+						<i class="material-icons mdl-list__item-icon" style="height: 60px">
+							<img data-name="{{x.first}}"  ng-if="x.profile_pic == null" class="profile" style="width: 45px;border-radius: 50%" /> 
+							<img src="{{x.profile_pic}}"  ng-if="x.profile_pic != null" style="width: 45px;border-radius: 50%" /> 
+						</i>
+
+						<span>{{x.first}} {{x.last}}</span>
+						<p class="mdl-list__item-text-body">
+							{{x.message}}
+						</p>
+					</span>
+					<span class="mdl-list__item-secondary-content">
+						<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="http://judelicio.us/initial.js/js/initial.min.js"></script>
+	<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<script src="js/script.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  $('.profile').initial(); 
+		}) 
+	</script>
+
+</body>
+</html>
